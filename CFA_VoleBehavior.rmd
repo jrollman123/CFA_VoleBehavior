@@ -1,7 +1,7 @@
 ---
 title: "Confirmatory Factor Analysis"
 author: "John Rollman"
-date: "July 6, 2021"
+date: "May 6, 2021"
 output: 
   rmarkdown::github_document:
     toc: yes
