@@ -1,0 +1,36 @@
+digraph "Risk_Model2" {
+  rankdir=LR;
+  size="8,8";
+  node [fontname="Helvetica" fontsize=14 fillcolor="steelblue" shape=box style=filled];
+  edge [fontname="Helvetica" fontsize=10];
+  center=1;
+  "ANX" [shape=ellipse]
+  "SOC" [shape=ellipse]
+  "NO_TOT_DIST" [fillcolor="transparent"]
+  "OF_TOT_DIST" [fillcolor="transparent"]
+  "NS_TOT_DIST" [fillcolor="transparent"]
+  "PP_TOT_DIST" [fillcolor="transparent"]
+  "SP_TOT_DIST" [fillcolor="transparent"]
+  "NS_DUR_STRANGER" [fillcolor="transparent"]
+  "PP_STRANGER_TOT_DUR" [fillcolor="transparent"]
+  "SP_DUR_STRANGER" [fillcolor="transparent"]
+  "ANX" -> "NO_TOT_DIST" [label="lambda11=0.65" color=black penwidth=1.001];
+  "ANX" -> "OF_TOT_DIST" [label="lambda21=0.62" color=black penwidth=1.001];
+  "ANX" -> "NS_TOT_DIST" [label="lambda31=0.73" color=black penwidth=1.001];
+  "ANX" -> "PP_TOT_DIST" [label="lambda41=0.74" color=black penwidth=1.001];
+  "ANX" -> "SP_TOT_DIST" [label="lambda51=0.87" color=black penwidth=1.001];
+  "SOC" -> "NS_DUR_STRANGER" [label="lambda12=0.67" color=black penwidth=1.001];
+  "SOC" -> "PP_STRANGER_TOT_DUR" [label="lambda22=0.28" color=black penwidth=1.001];
+  "SOC" -> "SP_DUR_STRANGER" [label="lambda32=0.74" color=black penwidth=1.001];
+  "NO_TOT_DIST" -> "NO_TOT_DIST" [label="psi1=0.43" dir=both color=black penwidth=1.001];
+  "OF_TOT_DIST" -> "OF_TOT_DIST" [label="psi2=0.56" dir=both color=black penwidth=1.001];
+  "NS_TOT_DIST" -> "NS_TOT_DIST" [label="psi3=0.43" dir=both color=black penwidth=1.001];
+  "PP_TOT_DIST" -> "PP_TOT_DIST" [label="psi4=0.41" dir=both color=black penwidth=1.001];
+  "SP_TOT_DIST" -> "SP_TOT_DIST" [label="psi5=0.22" dir=both color=black penwidth=1.001];
+  "NS_DUR_STRANGER" -> "NS_DUR_STRANGER" [label="psi6=0.33" dir=both color=black penwidth=1.001];
+  "PP_STRANGER_TOT_DUR" -> "PP_STRANGER_TOT_DUR" [label="psi7=0.88" dir=both color=black penwidth=1.001];
+  "SP_DUR_STRANGER" -> "SP_DUR_STRANGER" [label="psi8=0.27" dir=both color=black penwidth=1.001];
+  "ANX" -> "ANX" [label="1=1" dir=both color=black penwidth=1.001];
+  "SOC" -> "SOC" [label="1=1" dir=both color=black penwidth=1.001];
+  "ANX" -> "SOC" [label="rho1=-0.62" dir=both color=black penwidth=1.001];
+}
