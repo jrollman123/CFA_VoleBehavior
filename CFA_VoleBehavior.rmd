@@ -2,7 +2,14 @@
 title: "Confirmatory Factor Analysis"
 author: "John Rollman"
 date: "July 6, 2021"
-output: html_document
+output: 
+  rmarkdown::github_document:
+    toc: yes
+    toc_depth: '4'
+  html_document:
+    toc: yes
+    toc_depth: '4'
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
