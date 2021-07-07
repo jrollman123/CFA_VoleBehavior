@@ -30,6 +30,8 @@ library(Hmisc)
 library(lavaan)
 library(MVN)
 library(GPArotation)
+
+webshot::install_phantomjs()
 ```
 
 Data Import
@@ -675,12 +677,8 @@ pathDiagram(Risk_Model2,
 grViz("Risk_Model_plot.dot")
 ```
 
-    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-7-2.png)
 
-<!--html_preserve-->
-
-<script type="application/json" data-for="htmlwidget-347c0a1e8047c9526585">{"x":{"diagram":"digraph \"Risk_Model2\" {\n  rankdir=LR;\n  size=\"8,8\";\n  node [fontname=\"Helvetica\" fontsize=14 fillcolor=\"steelblue\" shape=box style=filled];\n  edge [fontname=\"Helvetica\" fontsize=10];\n  center=1;\n  \"ANX\" [shape=ellipse]\n  \"SOC\" [shape=ellipse]\n  \"NO_TOT_DIST\" [fillcolor=\"transparent\"]\n  \"OF_TOT_DIST\" [fillcolor=\"transparent\"]\n  \"NS_TOT_DIST\" [fillcolor=\"transparent\"]\n  \"PP_TOT_DIST\" [fillcolor=\"transparent\"]\n  \"SP_TOT_DIST\" [fillcolor=\"transparent\"]\n  \"NS_DUR_STRANGER\" [fillcolor=\"transparent\"]\n  \"PP_STRANGER_TOT_DUR\" [fillcolor=\"transparent\"]\n  \"SP_DUR_STRANGER\" [fillcolor=\"transparent\"]\n  \"ANX\" -> \"NO_TOT_DIST\" [label=\"lambda11=0.65\" color=black penwidth=1.001];\n  \"ANX\" -> \"OF_TOT_DIST\" [label=\"lambda21=0.62\" color=black penwidth=1.001];\n  \"ANX\" -> \"NS_TOT_DIST\" [label=\"lambda31=0.73\" color=black penwidth=1.001];\n  \"ANX\" -> \"PP_TOT_DIST\" [label=\"lambda41=0.74\" color=black penwidth=1.001];\n  \"ANX\" -> \"SP_TOT_DIST\" [label=\"lambda51=0.87\" color=black penwidth=1.001];\n  \"SOC\" -> \"NS_DUR_STRANGER\" [label=\"lambda12=0.67\" color=black penwidth=1.001];\n  \"SOC\" -> \"PP_STRANGER_TOT_DUR\" [label=\"lambda22=0.28\" color=black penwidth=1.001];\n  \"SOC\" -> \"SP_DUR_STRANGER\" [label=\"lambda32=0.74\" color=black penwidth=1.001];\n  \"NO_TOT_DIST\" -> \"NO_TOT_DIST\" [label=\"psi1=0.43\" dir=both color=black penwidth=1.001];\n  \"OF_TOT_DIST\" -> \"OF_TOT_DIST\" [label=\"psi2=0.56\" dir=both color=black penwidth=1.001];\n  \"NS_TOT_DIST\" -> \"NS_TOT_DIST\" [label=\"psi3=0.43\" dir=both color=black penwidth=1.001];\n  \"PP_TOT_DIST\" -> \"PP_TOT_DIST\" [label=\"psi4=0.41\" dir=both color=black penwidth=1.001];\n  \"SP_TOT_DIST\" -> \"SP_TOT_DIST\" [label=\"psi5=0.22\" dir=both color=black penwidth=1.001];\n  \"NS_DUR_STRANGER\" -> \"NS_DUR_STRANGER\" [label=\"psi6=0.33\" dir=both color=black penwidth=1.001];\n  \"PP_STRANGER_TOT_DUR\" -> \"PP_STRANGER_TOT_DUR\" [label=\"psi7=0.88\" dir=both color=black penwidth=1.001];\n  \"SP_DUR_STRANGER\" -> \"SP_DUR_STRANGER\" [label=\"psi8=0.27\" dir=both color=black penwidth=1.001];\n  \"ANX\" -> \"ANX\" [label=\"1=1\" dir=both color=black penwidth=1.001];\n  \"SOC\" -> \"SOC\" [label=\"1=1\" dir=both color=black penwidth=1.001];\n  \"ANX\" -> \"SOC\" [label=\"rho1=-0.62\" dir=both color=black penwidth=1.001];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<!--/html_preserve-->
 Factor Score Analysis
 =====================
 

@@ -33,6 +33,8 @@ library(Hmisc)
 library(lavaan)
 library(MVN)
 library(GPArotation)
+
+webshot::install_phantomjs()
 ```
 
 
@@ -345,6 +347,7 @@ round(Risk_Model2$S - Risk_Model2$C,2)
 
 Vhat <- Risk_Model2$vcov
 corrplot(cov2cor(Vhat))
+
 
 pathDiagram(Risk_Model2,
             ignore.double =  F,
