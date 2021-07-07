@@ -101,14 +101,6 @@ a <- ggplot(BehDat.cntrl,aes(scale(BehDat.cntrl[,i]))) +
 print(a)
 }
 
-#Create Histograms
-for(i in 5:N) {
-a <- ggplot(BehDat.cntrl,aes(BehDat.cntrl[,i])) + 
-  geom_histogram() +
-  ggtitle(colnames(BehDat.cntrl)[i])
-print(a)
-}
-
 #QQ Plots of Univariate Normality
 for(i in 5:N) {
 qqnorm(scale(BehDat[,i]), main = colnames(BehDat)[i])
@@ -238,7 +230,7 @@ fa.diagram(fa.out.quartimax, cut=0.2, simple = F, main = "Qaurtimax roation")
 
 
 #Confirmatory Factor Analysis (Total Stranger Interactions)
-```{r}
+```{r message=FALSE, warning=FALSE, error=FALSE}
 #Preprocessing
 CFADat <- BehDat.cntrl[,5:N]
 CFADat.c <- BehDat.clean[,5:N]
@@ -343,7 +335,7 @@ Risk_Model4 <- sem::sem(model = textModel,
 summary(Risk_Model2, fit.indices=c("GFI", "AGFI", "RMSEA", "NFI", "NNFI", "CFI", "RNI",
 "IFI", "SRMR", "AIC", "AICc", "BIC", "CAIC"))
 
-round(Risk_Model2$S - Risk_Model2$C,2)
+#round(Risk_Model2$S - Risk_Model2$C,2)
 
 Vhat <- Risk_Model2$vcov
 corrplot(cov2cor(Vhat))

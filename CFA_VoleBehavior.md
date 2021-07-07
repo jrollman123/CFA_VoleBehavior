@@ -111,48 +111,6 @@ print(a)
 ![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-17.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-18.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-19.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-20.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-21.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-22.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-23.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-24.png)
 
 ``` r
-#Create Histograms
-for(i in 5:N) {
-a <- ggplot(BehDat.cntrl,aes(BehDat.cntrl[,i])) + 
-  geom_histogram() +
-  ggtitle(colnames(BehDat.cntrl)[i])
-print(a)
-}
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-25.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-26.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-27.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-28.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-29.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-30.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-31.png)
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-32.png)
-
-``` r
 #QQ Plots of Univariate Normality
 for(i in 5:N) {
 qqnorm(scale(BehDat[,i]), main = colnames(BehDat)[i])
@@ -160,7 +118,7 @@ abline(0,1)
 }
 ```
 
-![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-33.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-34.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-35.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-36.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-37.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-38.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-39.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-40.png)
+![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-25.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-26.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-27.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-28.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-29.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-30.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-31.png)![](CFA_VoleBehavior_files/figure-markdown_github/unnamed-chunk-3-32.png)
 
 Normality Assumptions
 =====================
@@ -503,12 +461,7 @@ SOC   <->   SOC,   NA,  1
 ##Correlation Between Latent Variables
 ANX   <->   SOC,    rho1, NA
 ")
-```
 
-    ## NOTE: it is generally simpler to use specifyEquations() or cfa()
-    ##       see ?specifyEquations
-
-``` r
 #CFA for All Data
 Risk_Model1 <- sem::sem(model = textModel,
                   data = CFADat,
@@ -637,29 +590,8 @@ summary(Risk_Model2, fit.indices=c("GFI", "AGFI", "RMSEA", "NFI", "NNFI", "CFI",
     ##  Iterations =  20
 
 ``` r
-round(Risk_Model2$S - Risk_Model2$C,2)
-```
+#round(Risk_Model2$S - Risk_Model2$C,2)
 
-    ##                     NO_TOT_DIST OF_TOT_DIST NS_TOT_DIST SP_TOT_DIST PP_TOT_DIST
-    ## NO_TOT_DIST                0.15        0.04       -0.02        0.02        0.03
-    ## OF_TOT_DIST                0.04        0.06       -0.01       -0.01        0.05
-    ## NS_TOT_DIST               -0.02       -0.01        0.03       -0.02       -0.01
-    ## SP_TOT_DIST                0.02       -0.01       -0.02        0.02       -0.01
-    ## PP_TOT_DIST                0.03        0.05       -0.01       -0.01        0.04
-    ## NS_DUR_STRANGER            0.24        0.05       -0.10        0.04       -0.01
-    ## SP_DUR_STRANGER            0.19        0.13        0.00       -0.04       -0.01
-    ## PP_STRANGER_TOT_DUR       -0.03       -0.05        0.00       -0.05       -0.12
-    ##                     NS_DUR_STRANGER SP_DUR_STRANGER PP_STRANGER_TOT_DUR
-    ## NO_TOT_DIST                    0.24            0.19               -0.03
-    ## OF_TOT_DIST                    0.05            0.13               -0.05
-    ## NS_TOT_DIST                   -0.10            0.00                0.00
-    ## SP_TOT_DIST                    0.04           -0.04               -0.05
-    ## PP_TOT_DIST                   -0.01           -0.01               -0.12
-    ## NS_DUR_STRANGER                0.22            0.14               -0.01
-    ## SP_DUR_STRANGER                0.14            0.17               -0.01
-    ## PP_STRANGER_TOT_DUR           -0.01           -0.01                0.04
-
-``` r
 Vhat <- Risk_Model2$vcov
 corrplot(cov2cor(Vhat))
 ```
